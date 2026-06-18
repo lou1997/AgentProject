@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>牧场攻略 - 梦幻西游攻略站</title>
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/pages/ranch.css">
+</head>
+<body>
+  <header class="global-header">
+    <div class="container">
+      <a href="/" class="glogo">
+        <span class="glogo-icon">梦</span>
+        <div class="glogo-text">
+          <h1>梦幻西游攻略站</h1>
+          <p>MHXY.GUIDE</p>
+        </div>
+      </a>
+      <nav class="gnav">
+        <a href="/">首页</a>
+        <a href="/ranch.html" class="active">牧场</a>
+        <a href="#">五开</a>
+        <a href="#">副本</a>
+        <a href="#">门派</a>
+        <a href="#">装备</a>
+        <a href="#">宠物</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="ranch-hero">
+      <div class="container">
+        <span class="hero-badge">2026最新版</span>
+        <h2>梦幻西游牧场攻略 <span>每天5分钟，储备金自由</span></h2>
+        <p>最全开通教程、动物图鉴、日常流程、收益计算器。数据综合自叶子猪攻略站 & B站UP主「梦幻牧场寻梦」</p>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-num">3,000</span>
+            <span class="stat-label">每日积分上限</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">10W</span>
+            <span class="stat-label">500积兑换储备金</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">2.5W</span>
+            <span class="stat-label">升专精所需积分</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">5分钟</span>
+            <span class="stat-label">每日操作时间</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 开通教程 -->
+    <section class="section" id="open">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">01</span>
+          <h2>牧场开通教程</h2>
+          <p>从零开始，一步步开通牧场</p>
+        </div>
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>前置条件</h3>
+              <ul>
+                <li>角色等级 <strong>&ge; 50级</strong></li>
+                <li>拥有一套<strong>房屋</strong>（规格风水不限）</li>
+                <li>准备 <strong>100W 梦幻币</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>领取任务</h3>
+              <ul>
+                <li>前往 <strong>大唐境外 (207, 102)</strong></li>
+                <li>找到 NPC <strong>张猎户</strong></li>
+                <li>对话选「牧场任务」&rarr;「我非常有兴趣」</li>
+                <li>缴纳 <strong>100W</strong> 开启牧场建设</li>
+              </ul>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>任务一：找刘母</h3>
+              <ul>
+                <li>前往 <strong>大唐国境 (250, 303)</strong></li>
+                <li>与 <strong>刘母</strong> 对话获得竹子</li>
+                <li><span class="tag tag-green">无需花费</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h3>任务二：找路人甲</h3>
+              <ul>
+                <li>前往 <strong>长寿郊外 (44, 130)</strong></li>
+                <li>与 <strong>路人甲</strong> 对话获取木材</li>
+                <li>上交<strong>1件环装</strong>（50-70级）或直接给 <strong>20W</strong></li>
+                <li><span class="tag tag-gold">环装低于20W给环，高于则给20W</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h3>任务三：找慕容先生</h3>
+              <ul>
+                <li>前往 <strong>傲来国客栈</strong></li>
+                <li>找到 <strong>慕容先生</strong> 获取饮水槽</li>
+                <li>给予指定鱼类或直接 <strong>10W</strong>（推荐直接给钱）</li>
+              </ul>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">6</div>
+            <div class="step-body">
+              <h3>牧场建成</h3>
+              <ul>
+                <li>回张猎户处交任务，等待24小时内通知</li>
+                <li>从<strong>回家轿夫</strong>处进入牧场</li>
+                <li><span class="tag tag-green">开通完成！总成本约130W</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h3>开通总成本</h3>
+          <table class="cost-table">
+            <tr><td>基础费用</td><td>100W</td></tr>
+            <tr><td>路人甲</td><td>环装或20W</td></tr>
+            <tr><td>慕容先生</td><td>10W</td></tr>
+            <tr class="total-row"><td>合计（建议现金）</td><td><strong>130W</strong></td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 升级路线 -->
+    <section class="section section-alt" id="upgrade">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">02</span>
+          <h2>牧场升级路线</h2>
+          <p>初级 &rarr; 中级 &rarr; 高级 &rarr; 专精，最快路径</p>
+        </div>
+        <div class="upgrade-path">
+          <div class="upgrade-item">
+            <div class="upgrade-level">初级牧场</div>
+            <div class="upgrade-desc">系统默认开通</div>
+            <div class="upgrade-limit">鸟3 哺乳3 爬行1 珍稀1</div>
+          </div>
+          <div class="upgrade-arrow">&rarr;</div>
+          <div class="upgrade-item">
+            <div class="upgrade-level">中级牧场</div>
+            <div class="upgrade-desc">消耗 <strong>5000积分</strong></div>
+            <div class="upgrade-limit">鸟5 哺乳5 爬行2 珍稀2</div>
+          </div>
+          <div class="upgrade-arrow">&rarr;</div>
+          <div class="upgrade-item">
+            <div class="upgrade-level">高级牧场</div>
+            <div class="upgrade-desc">消耗 <strong>15000积分</strong></div>
+            <div class="upgrade-limit">鸟7 哺乳7 爬行3 珍稀3</div>
+          </div>
+          <div class="upgrade-arrow">&rarr;</div>
+          <div class="upgrade-item highlight">
+            <div class="upgrade-level">专精牧场</div>
+            <div class="upgrade-desc">高级牧场 + 养育技能5级</div>
+            <div class="upgrade-limit">某一类数量大幅提升</div>
+          </div>
+        </div>
+        <div class="info-box">
+          <h3>快速升级策略</h3>
+          <p>直接收牧场产出出售换积分：每天上限 <strong>3000分</strong>，夫妻号一起每天 <strong>6000分</strong>。从初级到专精约需 <strong>2.5万积分</strong>，最快 <strong>8-10天</strong> 完成。也可以慢慢养成，节省成本。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 动物图鉴 -->
+    <section class="section" id="animals">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">03</span>
+          <h2>动物图鉴</h2>
+          <p>4大类型12种动物，选择最适合你的养殖方案</p>
+        </div>
+        <div class="animal-tabs">
+          <button class="animal-tab active" data-type="bird">鸟类</button>
+          <button class="animal-tab" data-type="mammal">哺乳类</button>
+          <button class="animal-tab" data-type="reptile">爬行类</button>
+          <button class="animal-tab" data-type="rare">珍稀类</button>
+        </div>
+
+        <div class="animal-grid active" id="type-bird">
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#1565c0,#42a5f5)"><span>&#128038;</span></div>
+            <div class="animal-info">
+              <h3>孔雀 <span class="tag tag-orange">推荐</span></h3>
+              <div class="animal-attr"><span>寿命</span><span>12天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>2天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>7天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>324分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>36分/天</span></div>
+              <p class="animal-tip">新手首选，繁殖容易不断窝，成本极低</p>
+            </div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#00695c,#26a69a)"><span>&#129436;</span></div>
+            <div class="animal-info">
+              <h3>金刚鹦鹉</h3>
+              <div class="animal-attr"><span>寿命</span><span>14天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>3天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>8天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>360分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>40分/天</span></div>
+              <p class="animal-tip">积分略高于孔雀，中期可选</p>
+            </div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#e65100,#ff9800)"><span>&#128037;</span></div>
+            <div class="animal-info">
+              <h3>火烈鸟</h3>
+              <div class="animal-attr"><span>寿命</span><span>10天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>2天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>6天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>288分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>32分/天</span></div>
+              <p class="animal-tip">寿命偏短，不推荐新手</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-grid" id="type-mammal">
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#4a148c,#ab47bc)"><span>&#128040;</span></div>
+            <div class="animal-info">
+              <h3>树袋熊 <span class="tag tag-orange">推荐</span></h3>
+              <div class="animal-attr"><span>寿命</span><span>14天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>3天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>8天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>432分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>48分/天</span></div>
+              <p class="animal-tip">哺乳类最优选，繁殖稳定不断窝</p>
+            </div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#bf360c,#f4511e)"><span>&#128048;</span></div>
+            <div class="animal-info">
+              <h3>垂耳兔</h3>
+              <div class="animal-attr"><span>寿命</span><span>12天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>3天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>7天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>384分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>43分/天</span></div>
+              <p class="animal-tip">积分不错，繁殖率略低于树袋熊</p>
+            </div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#1b5e20,#66bb6a)"><span>&#128058;</span></div>
+            <div class="animal-info">
+              <h3>老虎 / 狮子 / 豹子</h3>
+              <div class="animal-attr"><span>寿命</span><span>16天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>4天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>9天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>480分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>53分/天</span></div>
+              <p class="animal-tip">积分高但窝贵，繁殖率低</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-grid" id="type-reptile">
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#0d47a1,#1976d2)"><span>&#128013;</span></div>
+            <div class="animal-info">
+              <h3>蟒蛇 <span class="tag tag-orange">推荐</span></h3>
+              <div class="animal-attr"><span>寿命</span><span>16天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>4天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>9天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>540分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>60分/天</span></div>
+              <p class="animal-tip">爬行类中最容易繁殖</p>
+            </div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#00695c,#4db6ac)"><span>&#129422;</span></div>
+            <div class="animal-info">
+              <h3>鳄鱼</h3>
+              <div class="animal-attr"><span>寿命</span><span>18天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>5天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>10天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>600分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>60分/天</span></div>
+              <p class="animal-tip">积分与蟒蛇持平，窝更贵</p>
+            </div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#827717,#c0ca33)"><span>&#129422;</span></div>
+            <div class="animal-info">
+              <h3>蜥蜴</h3>
+              <div class="animal-attr"><span>寿命</span><span>14天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>3天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>8天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>480分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>53分/天</span></div>
+              <p class="animal-tip">收益一般，不推荐</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-grid" id="type-rare">
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#1a1a1a,#424242)"><span>&#128059;</span></div>
+            <div class="animal-info">
+              <h3>熊猫 <span class="tag tag-orange">推荐</span></h3>
+              <div class="animal-attr"><span>寿命</span><span>20天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>5天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>12天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>720分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>60分/天</span></div>
+              <p class="animal-tip">珍稀类最优选，懒人专用，B站梦幻牧场寻梦推荐</p>
+            </div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#e0c8a0,#c8a05c)"><span>&#128004;</span></div>
+            <div class="animal-info">
+              <h3>羊驼</h3>
+              <div class="animal-attr"><span>寿命</span><span>20天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>5天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>12天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>720分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>60分/天</span></div>
+              <p class="animal-tip">与熊猫同积分，窝价稍低</p>
+            </div>
+          </div>
+          <div class="animal-card">
+            <div class="animal-img" style="background:linear-gradient(135deg,#3e2723,#795548)"><span>&#129429;</span></div>
+            <div class="animal-info">
+              <h3>白犀牛</h3>
+              <div class="animal-attr"><span>寿命</span><span>22天</span></div>
+              <div class="animal-attr"><span>幼年期</span><span>6天</span></div>
+              <div class="animal-attr"><span>成年期</span><span>13天</span></div>
+              <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
+              <div class="animal-attr"><span>每次积分</span><span>780分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>60分/天</span></div>
+              <p class="animal-tip">窝最贵，繁殖率低，新手慎选</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 日常流程 -->
+    <section class="section section-alt" id="daily">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">04</span>
+          <h2>日常操作流程</h2>
+          <p>每天5分钟标准化操作</p>
+        </div>
+        <div class="daily-flow">
+          <div class="daily-step">
+            <div class="daily-num">01</div>
+            <h3>进入牧场</h3>
+            <p>通过回家轿夫进入自家牧场</p>
+          </div>
+          <div class="daily-step">
+            <div class="daily-num">02</div>
+            <h3>清洁牧场</h3>
+            <p>消耗金钱清洁，确保动物清洁度100</p>
+          </div>
+          <div class="daily-step">
+            <div class="daily-num">03</div>
+            <h3>喂养饲料</h3>
+            <p>保持饱食度<strong>80以上</strong>，成年动物满饱食有特殊产出</p>
+          </div>
+          <div class="daily-step">
+            <div class="daily-num">04</div>
+            <h3>收集产出</h3>
+            <p>点击各成年动物收集产出，每3天一次</p>
+          </div>
+          <div class="daily-step">
+            <div class="daily-num">05</div>
+            <h3>拜访好友繁殖</h3>
+            <p>携带<strong>10只成年动物</strong>拜访好友牧场，每天<strong>3次</strong>，获取宝宝窝</p>
+          </div>
+          <div class="daily-step">
+            <div class="daily-num">06</div>
+            <h3>出售老年动物</h3>
+            <p>距老年不足1天的动物，繁殖后立即出售换积分</p>
+          </div>
+        </div>
+        <div class="notice-box">
+          <h3>关键提醒</h3>
+          <ul>
+            <li>不要点「进入生育期」按钮：点了后无法带出繁殖，且无产出</li>
+            <li>好友数量至少 <strong>20个</strong>：有利于触发动物采购员</li>
+            <li>同类只养同种：方便集中带出繁殖，避免跑多家</li>
+            <li>每周日晚上12点刷新积分上限（1.5W/周）</li>
+            <li>成年动物饱食度满时会有特殊产出（额外积分收益）</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 断窝应对 -->
+    <section class="section" id="broken">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">05</span>
+          <h2>断窝应对策略</h2>
+          <p>动物断窝不用慌，这里有全方位解决方案</p>
+        </div>
+        <div class="steps three-col">
+          <div class="step-card">
+            <div class="step-num" style="background:linear-gradient(135deg,#1565c0,#1976d2)">A</div>
+            <div class="step-body">
+              <h3>立即补救</h3>
+              <ul>
+                <li><strong>世界频道收购</strong>：喊话收宝宝窝，价格随行就市</li>
+                <li><strong>轿夫摊位购买</strong>：回家轿夫附近常有商人摆摊卖窝</li>
+                <li><strong>建邺城摊位</strong>：建邺也是窝交易集中地</li>
+                <li><strong>帮派求助</strong>：帮里喊一声，常有朋友有多的窝</li>
+              </ul>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num" style="background:linear-gradient(135deg,#2e7d32,#43a047)">B</div>
+            <div class="step-body">
+              <h3>预防为主</h3>
+              <ul>
+                <li><strong>好友数量 &ge;20人</strong>：通过牧场告示牌批量添加</li>
+                <li><strong>每天3次拜访</strong>：坚持带满10只动物繁殖</li>
+                <li><strong>夫妻号互访</strong>：结婚号每天相互拜访，繁殖率更高</li>
+                <li><strong>储备备用窝</strong>：包里始终留1-2个备用宝宝窝</li>
+              </ul>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num" style="background:linear-gradient(135deg,#e65100,#ff9800)">C</div>
+            <div class="step-body">
+              <h3>长期策略</h3>
+              <ul>
+                <li><strong>选高繁殖率动物</strong>：孔雀、树袋熊繁殖最稳定</li>
+                <li><strong>珍稀类量力而行</strong>：熊猫羊驼繁殖率低，新手慎养</li>
+                <li><strong>同类型全养同种</strong>：方便集中繁殖，提高效率</li>
+                <li><strong>不点生育期</strong>：不要被界面的生育期按钮诱惑</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 收益计算器 -->
+    <section class="section section-alt" id="calc">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">06</span>
+          <h2>收益计算器</h2>
+          <p>选择配置，快速估算收益</p>
+        </div>
+        <div class="calc-container">
+          <div class="calc-form">
+            <h3>牧场配置</h3>
+            <div class="form-group">
+              <label>牧场等级</label>
+              <select id="ranch-level">
+                <option value="primary">初级牧场</option>
+                <option value="mid">中级牧场</option>
+                <option value="high" selected>高级牧场</option>
+                <option value="master">专精牧场(走兽)</option>
+              </select>
+            </div>
+            <div class="form-group"><label>鸟类 (孔雀)</label><input type="number" id="bird-count" value="7" min="0" max="20"></div>
+            <div class="form-group"><label>哺乳类 (树袋熊)</label><input type="number" id="mammal-count" value="7" min="0" max="20"></div>
+            <div class="form-group"><label>爬行类 (蟒蛇)</label><input type="number" id="reptile-count" value="3" min="0" max="20"></div>
+            <div class="form-group"><label>珍稀类 (熊猫)</label><input type="number" id="rare-count" value="3" min="0" max="20"></div>
+          </div>
+          <div class="calc-result">
+            <h3>收益预估</h3>
+            <div class="result-grid">
+              <div class="result-item">
+                <span class="result-label">每日积分</span>
+                <span class="result-value" id="daily-score">--</span>
+              </div>
+              <div class="result-item">
+                <span class="result-label">每周积分</span>
+                <span class="result-value" id="weekly-score">--</span>
+              </div>
+              <div class="result-item">
+                <span class="result-label">每周储备金</span>
+                <span class="result-value" id="weekly-reserve">--</span>
+              </div>
+              <div class="result-item">
+                <span class="result-label">每周修炼果</span>
+                <span class="result-value" id="weekly-fruit">--</span>
+              </div>
+            </div>
+            <div class="result-tip">500积分=10W储备金 | 4000积分=1修炼果 | 90积分=1九转金丹</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 视频攻略 -->
+    <section class="section" id="videos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">07</span>
+          <h2>视频攻略</h2>
+          <p>B站UP主「梦幻牧场寻梦」实战教学</p>
+        </div>
+        <div class="video-grid">
+          <a href="https://www.bilibili.com/video/BV1NdbAzCEMK/" target="_blank" class="video-card">
+            <div class="video-thumb" style="background:linear-gradient(135deg,#1b5e20,#43a047)">
+              <span class="video-duration">07:45</span>
+            </div>
+            <div class="video-body">
+              <h3>最详细牧场攻略，轻松搞定储备金</h3>
+              <p>从零开始完整教程，手把手教你牧场养号</p>
+              <div class="video-meta"><span>梦幻牧场寻梦</span><span>2025-08-11</span></div>
+            </div>
+          </a>
+          <a href="https://www.bilibili.com/video/BV1EJUVBoEoC/" target="_blank" class="video-card">
+            <div class="video-thumb" style="background:linear-gradient(135deg,#bf360c,#f4511e)">
+              <span class="video-duration">02:11</span>
+            </div>
+            <div class="video-body">
+              <h3>从零牧场43天，升高级牧场了</h3>
+              <p>真实记录43天从初级升到高级牧场全过程</p>
+              <div class="video-meta"><span>梦幻牧场寻梦</span><span>2025-11-24</span></div>
+            </div>
+          </a>
+          <a href="https://www.bilibili.com/video/BV1mCi2BKEoN/" target="_blank" class="video-card">
+            <div class="video-thumb" style="background:linear-gradient(135deg,#311b92,#7c4dff)">
+              <span class="video-duration">00:54</span>
+            </div>
+            <div class="video-body">
+              <h3>珍稀动物：熊猫、羊驼</h3>
+              <p>熊猫和羊驼养殖收益对比分析</p>
+              <div class="video-meta"><span>梦幻牧场寻梦</span><span>2025-01-08</span></div>
+            </div>
+          </a>
+          <a href="https://www.bilibili.com/video/BV1wHEA6hE2F/" target="_blank" class="video-card">
+            <div class="video-thumb" style="background:linear-gradient(135deg,#1a237e,#5c6bc0)">
+              <span class="video-duration">00:29</span>
+            </div>
+            <div class="video-body">
+              <h3>珍稀牧场收购商</h3>
+              <p>触发采购员机制详解，卖成年动物赚现金</p>
+              <div class="video-meta"><span>梦幻牧场寻梦</span><span>2025-06-05</span></div>
+            </div>
+          </a>
+          <a href="https://www.bilibili.com/video/BV1yvE16DEnw/" target="_blank" class="video-card">
+            <div class="video-thumb" style="background:linear-gradient(135deg,#b71c1c,#ef5350)">
+              <span class="video-duration">00:46</span>
+            </div>
+            <div class="video-body">
+              <h3>牧场强制解锁</h3>
+              <p>解决牧场被锁问题，强制解锁操作方法</p>
+              <div class="video-meta"><span>梦幻牧场寻梦</span><span>2025-06-13</span></div>
+            </div>
+          </a>
+          <a href="https://space.bilibili.com/3546955649125343" target="_blank" class="video-card video-more">
+            <div class="video-thumb" style="background:linear-gradient(135deg,#ff6f00,#ffb300);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:36px;color:#fff;">+</span>
+            </div>
+            <div class="video-body">
+              <h3>查看更多视频</h3>
+              <p>访问UP主「梦幻牧场寻梦」B站主页</p>
+              <div class="video-meta"><span>B站空间</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">08</span>
+          <h2>常见问题</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q">Q: 牧场值不值得开？</div>
+            <div class="faq-a">非常值得。每天5分钟，500积分兑换10W储备金，每周可轻松获取300W+储备金，是梦幻西游最稳定的储备金来源之一。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Q: 要不要升级专精牧场？</div>
+            <div class="faq-a">建议升级。专精后可养更多同类动物，日常操作更高效。走兽专精（哺乳类）最流行，树袋熊性价比最高。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Q: 怎样快速提升好友度？</div>
+            <div class="faq-a">每天坚持携带动物拜访好友繁殖，好友度会逐步提升。可通过牧场告示牌批量添加好友，好友越多越容易触发采购员。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Q: 积分每周兑换什么最划算？</div>
+            <div class="faq-a">优先级：储备金（充修炼/技能）&gt; 修炼果（自用或出售）&gt; 九转金丹。宝宝窝和饲料尽量从玩家处购买，不要用积分换。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Q: 专精牧场选哪类？</div>
+            <div class="faq-a">走兽专精（哺乳类）最推荐，树袋熊繁殖稳定。珍稀专精需要高投入但收益也更高。不建议选禽鸟和爬行专精。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Q: 动物进入生育期好不好？</div>
+            <div class="faq-a">不要点！进入生育期后动物无法带出繁殖，在自家牧场繁殖出窝几率极低，且期间没有产出，得不偿失。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="global-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>数据来源</h4>
+          <p><a href="https://xyq.yzz.cn/" target="_blank">叶子猪梦幻西游专区</a></p>
+          <p><a href="https://space.bilibili.com/3546955649125343" target="_blank">B站UP主：梦幻牧场寻梦</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>相关视频</h4>
+          <p><a href="https://www.bilibili.com/video/BV1NdbAzCEMK/" target="_blank">最详细牧场攻略</a></p>
+          <p><a href="https://www.bilibili.com/video/BV1oA411T7BG/" target="_blank">懒人牧场熊猫玩法</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>免责声明</h4>
+          <p>本站为非官方玩家攻略站</p>
+          <p>Copyright &copy; 2026 MHXY.Guide</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/src/main.js"></script>
+</body>
+</html>

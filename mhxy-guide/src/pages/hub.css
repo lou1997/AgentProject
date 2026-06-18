@@ -1,0 +1,61 @@
+/* ===== Hub Hero ===== */
+.hub-hero {
+  padding: 72px 0 48px;
+  background: linear-gradient(180deg, #1a1028 0%, #0d1117 100%);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.hub-hero h2 { font-size: 36px; color: var(--text-bright); margin-bottom: 12px; }
+.hub-hero h2 span { color: var(--gold-light); }
+.hub-hero p { font-size: 16px; color: var(--text-light); max-width: 520px; margin: 0 auto; }
+
+/* ===== Section Title ===== */
+.hub-title {
+  font-size: 22px; color: var(--text-bright); margin-bottom: 24px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+
+/* ===== Modules Grid ===== */
+.hub-modules { padding: 48px 0; }
+.module-grid { display: flex; flex-direction: column; gap: 16px; }
+.module-card {
+  display: flex; align-items: center; gap: 20px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px;
+  transition: all .3s;
+}
+.module-card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow); }
+.module-card.locked { opacity: .6; cursor: not-allowed; }
+.module-card.locked:hover { border-color: var(--border); transform: none; box-shadow: none; }
+.module-icon {
+  width: 64px; height: 64px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: bold; color: #fff;
+  flex-shrink: 0;
+}
+.module-body { flex: 1; }
+.module-body h4 { font-size: 17px; color: var(--text-bright); margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+.module-body p { font-size: 13px; color: var(--text-light); margin-bottom: 10px; }
+.module-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.module-tags .tag { padding: 3px 10px; border-radius: 3px; font-size: 11px; background: rgba(139,148,158,0.1); color: var(--text-light); }
+.module-arrow { font-size: 24px; color: var(--gold-light); flex-shrink: 0; }
+.module-arrow.disabled { color: var(--text-light); opacity: .4; }
+
+/* ===== Sources ===== */
+.hub-sources { padding: 48px 0; }
+.source-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.source-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px;
+  display: block; transition: all .3s;
+}
+.source-card:hover { border-color: var(--gold); }
+.source-name { display: block; font-size: 15px; color: var(--text-bright); margin-bottom: 4px; font-weight: bold; }
+.source-url { display: block; font-size: 12px; color: var(--gold-light); margin-bottom: 10px; }
+.source-card p { font-size: 13px; color: var(--text-light); }
+
+@media (max-width: 768px) {
+  .module-card { flex-direction: column; text-align: center; }
+  .module-arrow { display: none; }
+  .source-grid { grid-template-columns: 1fr; }
+}

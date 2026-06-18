@@ -5,6 +5,38 @@
   border-bottom: 1px solid #1a3a1a;
   text-align: center;
 }
+
+/* ===== Layout: sidebar + content ===== */
+.ranch-layout {
+  display: flex; gap: 0; align-items: flex-start;
+  max-width: 1280px; margin: 0 auto; padding: 0 24px;
+}
+.ranch-sidebar {
+  width: 200px; flex-shrink: 0; position: sticky; top: 24px;
+  padding: 20px 0;
+}
+.side-nav {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+}
+.side-nav-title {
+  display: block; font-size: 14px; font-weight: bold;
+  color: var(--green-light); margin-bottom: 12px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.side-nav a {
+  display: block; padding: 7px 10px; font-size: 13px;
+  color: var(--text-light); border-radius: 6px;
+  transition: all .15s; border-left: 2px solid transparent;
+}
+.side-nav a:hover {
+  color: var(--text-bright); background: rgba(46,125,50,0.08);
+}
+.side-nav a.active {
+  color: var(--green-light); background: rgba(46,125,50,0.12);
+  border-left-color: var(--green);
+}
+.ranch-content { flex: 1; min-width: 0; }
 .ranch-hero .hero-badge {
   display: inline-block; padding: 4px 14px;
   background: rgba(46,125,50,0.2); color: var(--green-light);
@@ -166,12 +198,18 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .ranch-layout { flex-direction: column; padding: 0 16px; }
+  .ranch-sidebar { width: 100%; position: static; padding: 0 0 16px; }
+  .side-nav { display: flex; flex-wrap: wrap; gap: 4px; padding: 10px; }
+  .side-nav-title { width: 100%; margin-bottom: 6px; padding-bottom: 6px; }
+  .side-nav a { padding: 5px 10px; font-size: 12px; border-left: none; }
   .hero-stats, .steps, .animal-grid.active, .daily-flow, .video-grid { grid-template-columns: repeat(2, 1fr); }
   .calc-container { grid-template-columns: 1fr; }
   .upgrade-path { flex-direction: column; }
   .upgrade-arrow { transform: rotate(90deg); }
 }
 @media (max-width: 480px) {
+  .ranch-layout { padding: 0 12px; }
   .hero-stats, .steps, .animal-grid.active, .daily-flow, .video-grid { grid-template-columns: 1fr; }
   .ranch-hero h2 { font-size: 22px; }
 }

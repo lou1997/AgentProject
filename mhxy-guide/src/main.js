@@ -18,42 +18,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Calculator (only on ranch page)
+  // Calculator
   const levelSelect = document.getElementById('ranch-level');
   if (levelSelect) {
-    const inputs = {
-      bird: document.getElementById('bird-count'),
-      mammal: document.getElementById('mammal-count'),
-      reptile: document.getElementById('reptile-count'),
-      rare: document.getElementById('rare-count')
-    };
+    const animalTypes = ['bird','mammal','reptile','rare'];
+    const typeSelectEls = {};
+    const countEls = {};
+    animalTypes.forEach(t => {
+      typeSelectEls[t] = document.getElementById(t + '-type');
+      countEls[t] = document.getElementById(t + '-count');
+    });
+
+    const allInputs = [...Object.values(typeSelectEls), ...Object.values(countEls)];
 
     const levelLimits = {
       primary: { bird: 3, mammal: 3, reptile: 1, rare: 1 },
-      mid: { bird: 5, mammal: 5, reptile: 2, rare: 2 },
-      high: { bird: 7, mammal: 7, reptile: 3, rare: 3 },
-      master: { bird: 3, mammal: 15, reptile: 2, rare: 3 }
+      mid:     { bird: 5, mammal: 5, reptile: 2, rare: 2 },
+      high:    { bird: 7, mammal: 7, reptile: 3, rare: 3 },
+      master:  { bird: 3, mammal: 15, reptile: 2, rare: 3 }
     };
 
     function updateLimits() {
       const limits = levelLimits[levelSelect.value];
-      Object.keys(limits).forEach(key => {
-        const input = inputs[key];
-        input.max = limits[key];
-        if (parseInt(input.value) > limits[key]) input.value = limits[key];
+      animalTypes.forEach(t => {
+        countEls[t].max = limits[t];
+        if (parseInt(countEls[t].value) > limits[t]) countEls[t].value = limits[t];
       });
       calculate();
     }
 
     function calculate() {
-      const bird = parseInt(inputs.bird.value) || 0;
-      const mammal = parseInt(inputs.mammal.value) || 0;
-      const reptile = parseInt(inputs.reptile.value) || 0;
-      const rare = parseInt(inputs.rare.value) || 0;
+      let totalDaily = 0;
+      animalTypes.forEach(t => {
+        const count = parseInt(countEls[t].value) || 0;
+        const sel = typeSelectEls[t];
+        const daily = parseFloat(sel.options[sel.selectedIndex].dataset.score) || 0;
+        totalDaily += count * daily;
+      });
 
-      const totalDaily = bird * 36 + mammal * 48 + reptile * 60 + rare * 60;
       const totalWeekly = totalDaily * 7;
-
       document.getElementById('daily-score').textContent = Math.round(totalDaily) + ' 分';
       document.getElementById('weekly-score').textContent = Math.round(totalWeekly) + ' 分';
       document.getElementById('weekly-reserve').textContent = Math.floor(totalWeekly / 500) * 10 + ' W';
@@ -61,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     levelSelect.addEventListener('change', updateLimits);
-    Object.values(inputs).forEach(input => input.addEventListener('input', calculate));
+    allInputs.forEach(el => el.addEventListener('input', calculate));
+    allInputs.forEach(el => el.addEventListener('change', calculate));
     updateLimits();
-    calculate();
   }
 });

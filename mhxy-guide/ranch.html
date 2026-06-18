@@ -267,9 +267,9 @@
               <div class="animal-attr"><span>幼年期</span><span>3天</span></div>
               <div class="animal-attr"><span>成年期</span><span>7天</span></div>
               <div class="animal-attr"><span>产出周期</span><span>每3天</span></div>
-              <div class="animal-attr"><span>每次积分</span><span>384分</span></div>
-              <div class="animal-attr"><span>日均积分</span><span>43分/天</span></div>
-              <p class="animal-tip">积分不错，繁殖率略低于树袋熊</p>
+              <div class="animal-attr"><span>每次积分</span><span>540分</span></div>
+              <div class="animal-attr"><span>日均积分</span><span>60分/天</span></div>
+              <p class="animal-tip">哺乳类积分最高，繁殖率略低于树袋熊</p>
             </div>
           </div>
           <div class="animal-card">
@@ -495,10 +495,46 @@
                 <option value="master">专精牧场(走兽)</option>
               </select>
             </div>
-            <div class="form-group"><label>鸟类 (孔雀)</label><input type="number" id="bird-count" value="7" min="0" max="20"></div>
-            <div class="form-group"><label>哺乳类 (树袋熊)</label><input type="number" id="mammal-count" value="7" min="0" max="20"></div>
-            <div class="form-group"><label>爬行类 (蟒蛇)</label><input type="number" id="reptile-count" value="3" min="0" max="20"></div>
-            <div class="form-group"><label>珍稀类 (熊猫)</label><input type="number" id="rare-count" value="3" min="0" max="20"></div>
+            <div class="animal-selector" data-type="bird">
+              <span class="calc-type-label">鸟类</span>
+              <select class="animal-type" id="bird-type">
+                <option value="peacock" data-score="36">孔雀 (36分/天)</option>
+                <option value="macaw" data-score="40">金刚鹦鹉 (40分/天)</option>
+                <option value="flamingo" data-score="32">火烈鸟 (32分/天)</option>
+              </select>
+              <span class="calc-mult">x</span>
+              <input type="number" class="animal-count" id="bird-count" value="7" min="0" max="20">
+            </div>
+            <div class="animal-selector" data-type="mammal">
+              <span class="calc-type-label">哺乳类</span>
+              <select class="animal-type" id="mammal-type">
+                <option value="koala" data-score="48">树袋熊 (48分/天)</option>
+                <option value="rabbit" data-score="60" selected>垂耳兔 (60分/天)</option>
+                <option value="tiger" data-score="53">老虎/狮子/豹 (53分/天)</option>
+              </select>
+              <span class="calc-mult">x</span>
+              <input type="number" class="animal-count" id="mammal-count" value="7" min="0" max="20">
+            </div>
+            <div class="animal-selector" data-type="reptile">
+              <span class="calc-type-label">爬行类</span>
+              <select class="animal-type" id="reptile-type">
+                <option value="python" data-score="60">蟒蛇 (60分/天)</option>
+                <option value="crocodile" data-score="60">鳄鱼 (60分/天)</option>
+                <option value="lizard" data-score="53">蜥蜴 (53分/天)</option>
+              </select>
+              <span class="calc-mult">x</span>
+              <input type="number" class="animal-count" id="reptile-count" value="3" min="0" max="20">
+            </div>
+            <div class="animal-selector" data-type="rare">
+              <span class="calc-type-label">珍稀类</span>
+              <select class="animal-type" id="rare-type">
+                <option value="panda" data-score="60">熊猫 (60分/天)</option>
+                <option value="alpaca" data-score="60">羊驼 (60分/天)</option>
+                <option value="rhino" data-score="60">白犀牛 (60分/天)</option>
+              </select>
+              <span class="calc-mult">x</span>
+              <input type="number" class="animal-count" id="rare-count" value="3" min="0" max="20">
+            </div>
           </div>
           <div class="calc-result">
             <h3>收益预估</h3>

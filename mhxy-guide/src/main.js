@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const limits = levelLimits[levelSelect.value];
       animalTypes.forEach(t => {
         countEls[t].max = limits[t];
-        if (parseInt(countEls[t].value) > limits[t]) countEls[t].value = limits[t];
+        countEls[t].value = limits[t];
       });
       calculate();
     }

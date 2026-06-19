@@ -1,0 +1,108 @@
+/* ===== Mount Hero ===== */
+.mount-hero {
+  padding: 56px 0 48px;
+  background: linear-gradient(180deg, #1a0a2e 0%, #0d1117 100%);
+  border-bottom: 1px solid #2a1a4a;
+  text-align: center;
+}
+
+/* Override shared section colors for mount theme */
+.mount-content .section-num { background: rgba(156,39,176,0.15); color: #ce93d8; }
+.mount-content .stat-num { color: #ce93d8; }
+.mount-content .stat-card:hover { border-color: #9c27b0; }
+.mount-content .step-card:hover { border-color: #9c27b0; }
+.mount-content .step-num { background: linear-gradient(135deg, #9c27b0, #6a1b9a); }
+.mount-content .step-body li::before { background: #ce93d8; }
+.mount-content .faq-item:hover { border-color: #9c27b0; }
+.mount-content .info-card:hover { border-color: #9c27b0; }
+.mount-content .skill-card:hover { border-color: #9c27b0; }
+
+/* Side-nav overrides for mount page */
+.mount-layout .side-nav-title { color: #ce93d8; }
+.mount-layout .side-nav a:hover { background: rgba(156,39,176,0.08); }
+.mount-layout .side-nav a.active {
+  color: #ce93d8; background: rgba(156,39,176,0.12);
+  border-left-color: #9c27b0;
+}
+
+/* ===== Layout: sidebar + content ===== */
+.mount-layout {
+  display: flex; gap: 0; align-items: flex-start;
+  max-width: 1280px; margin: 0 auto; padding: 0 24px;
+}
+.mount-sidebar {
+  width: 200px; flex-shrink: 0; position: sticky; top: 24px;
+  padding: 20px 0;
+}
+.mount-content { flex: 1; min-width: 0; }
+.mount-hero .hero-badge {
+  display: inline-block; padding: 4px 14px;
+  background: rgba(156,39,176,0.2); color: #ce93d8;
+  font-size: 12px; border-radius: 20px; margin-bottom: 16px;
+  border: 1px solid rgba(156,39,176,0.3);
+}
+.mount-hero h2 { font-size: 32px; color: var(--text-bright); margin-bottom: 12px; }
+.mount-hero h2 span { color: #ce93d8; display: block; font-size: 18px; margin-top: 6px; }
+.mount-hero p { font-size: 15px; color: var(--text-light); max-width: 680px; margin: 0 auto 36px; }
+
+/* ===== Info Grid ===== */
+.info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.info-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+  transition: all .3s;
+}
+.info-card:hover { border-color: #9c27b0; transform: translateY(-2px); box-shadow: var(--shadow); }
+.info-card h3 { font-size: 15px; color: var(--text-bright); margin-bottom: 8px; }
+.info-card p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+.section-intro { font-size: 14px; color: var(--text-light); line-height: 1.8; margin-top: 20px; max-width: 760px; margin-left: auto; margin-right: auto; text-align: center; }
+
+/* ===== Skill Grid ===== */
+.skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.skill-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+  transition: all .3s;
+}
+.skill-card:hover { border-color: #9c27b0; transform: translateY(-2px); box-shadow: var(--shadow); }
+.skill-card h4 { font-size: 15px; color: var(--text-bright); margin-bottom: 8px; }
+.skill-card p { font-size: 13px; color: var(--text-light); line-height: 1.7; margin-bottom: 10px; }
+.tag-blue { background: rgba(66,165,245,0.15); color: #42a5f5; }
+
+/* ===== Highlight Card ===== */
+.highlight-card {
+  background: var(--bg-card); border: 1px solid #9c27b0;
+  border-radius: var(--radius); padding: 24px;
+  box-shadow: 0 0 20px rgba(156,39,176,0.1);
+}
+.highlight-card .step-body h3 { font-size: 18px; color: #ce93d8; margin-bottom: 14px; }
+
+/* ===== Raid Stats ===== */
+.raid-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.raid-stats > div {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 14px;
+}
+.raid-stats > div strong { display: block; font-size: 13px; color: var(--text-light); margin-bottom: 4px; }
+.raid-stats > div span { font-size: 14px; color: var(--text-bright); }
+.raid-stats > div span em { color: #ce93d8; font-style: normal; font-weight: bold; }
+
+/* ===== Table enhancement ===== */
+.cost-table th {
+  font-size: 14px; color: var(--text-bright); font-weight: bold;
+  padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border);
+}
+.cost-table td { padding: 8px 12px; font-size: 14px; color: var(--text-light); border-bottom: 1px solid var(--border); }
+.cost-table .total-row td { color: var(--text-bright); font-weight: bold; border-bottom: none; padding-top: 12px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .mount-layout { flex-direction: column; padding: 0 16px; }
+  .mount-sidebar { width: 100%; position: static; padding: 0 0 16px; }
+  .mount-hero h2 { font-size: 22px; }
+  .info-grid, .skill-grid, .raid-stats { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .mount-layout { padding: 0 12px; }
+  .steps { grid-template-columns: 1fr; }
+}

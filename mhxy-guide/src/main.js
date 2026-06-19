@@ -62,10 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const allInputs = [...Object.values(typeSelectEls), ...Object.values(countEls)];
 
     const levelLimits = {
-      primary: { bird: 3, mammal: 3, reptile: 1, rare: 1 },
-      mid:     { bird: 5, mammal: 5, reptile: 2, rare: 2 },
-      high:    { bird: 7, mammal: 7, reptile: 3, rare: 3 },
-      master:  { bird: 3, mammal: 15, reptile: 2, rare: 3 }
+      primary:    { bird: 3, mammal: 3, reptile: 1, rare: 1 },
+      mid:        { bird: 5, mammal: 5, reptile: 2, rare: 2 },
+      high:       { bird: 7, mammal: 7, reptile: 3, rare: 6 },
+      beast:      { bird: 4, mammal: 15, reptile: 1, rare: 3 },
+      reptile_spec: { bird: 4, mammal: 3, reptile: 13, rare: 3 },
+      bird_spec:  { bird: 16, mammal: 3, reptile: 1, rare: 3 },
+      rare_spec:  { bird: 4, mammal: 3, reptile: 1, rare: 15 }
     };
 
     function updateLimits() {

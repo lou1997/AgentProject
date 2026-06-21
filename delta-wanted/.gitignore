@@ -1,0 +1,7 @@
+node_modules/
+dist/
+target/
+*.db
+*.trace.db
+*.db-shm
+*.db-wal

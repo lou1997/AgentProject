@@ -20,6 +20,8 @@ public class User {
 
     private String role = "user";
 
+    private boolean muted = false;
+
     private LocalDateTime createdAt = LocalDateTime.now();
 
     public User() {}
@@ -37,6 +39,8 @@ public class User {
     public void setAvatar(String a) { this.avatar = a; }
     public String getRole() { return role; }
     public void setRole(String r) { this.role = r; }
+    public boolean isMuted() { return muted; }
+    public void setMuted(boolean m) { this.muted = m; }
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime d) { this.createdAt = d; }
 }

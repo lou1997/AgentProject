@@ -43,6 +43,11 @@ function updateAuthUI() {
   document.getElementById('btn-login').style.display = u ? 'none' : '';
   document.getElementById('btn-user').style.display = u ? '' : 'none';
   document.getElementById('unread-badge').style.display = u ? '' : 'none';
+  if (u && u.role === 'admin') {
+    document.getElementById('nav-admin').style.display = '';
+  } else {
+    document.getElementById('nav-admin').style.display = 'none';
+  }
 }
 
 async function checkLogin() {
@@ -228,6 +233,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     const page = link.dataset.page;
     if (page === 'bounties') { switchPage('bounties'); loadBounties(); }
     else if (page === 'messages') { switchPage('messages'); loadConversations(); }
+    else if (page === 'admin') { switchPage('admin'); loadAdminUsers(); }
   });
 });
 
@@ -462,6 +468,54 @@ async function loadProfile() {
     `;
   } catch (e) { toast(e.message); }
 }
+
+// ===== Admin Panel =====
+async function loadAdminUsers() {
+  if (!currentUser || currentUser.role !== 'admin') {
+    switchPage('bounties');
+    toast('无权限访问');
+    return;
+  }
+  const list = document.getElementById('admin-user-list');
+  try {
+    const data = await api('/admin/users');
+    list.innerHTML = `
+      <table class="admin-table">
+        <thead><tr><th>用户名</th><th>角色</th><th>状态</th><th>操作</th><th>注册时间</th></tr></thead>
+        <tbody>${data.users.map(u => `
+          <tr>
+            <td>${escHtml(u.username)}</td>
+            <td><span class="role-badge ${u.role}">${u.role === 'admin' ? '管理员' : '普通用户'}</span></td>
+            <td><span class="status-badge ${u.muted ? 'muted' : 'active'}">${u.muted ? '已禁言' : '正常'}</span></td>
+            <td>${u.role !== 'admin' ? (u.muted
+              ? `<button class="btn btn-sm btn-outline" onclick="adminUnmute('${u.id}')">解除禁言</button>`
+              : `<button class="btn btn-sm btn-danger" onclick="adminMute('${u.id}')">禁言</button>`) : '-'}</td>
+            <td>${timeAgo(u.created_at)}</td>
+          </tr>
+        `).join('')}</tbody>
+      </table>
+    `;
+  } catch (e) {
+    list.innerHTML = '<p style="text-align:center;color:var(--text-dim);padding:40px">加载失败</p>';
+  }
+}
+
+window.adminMute = async function(id) {
+  if (!confirm('确定要禁言该用户吗？')) return;
+  try {
+    await api(`/admin/users/${id}/mute`, { method: 'POST' });
+    toast('用户已被禁言');
+    loadAdminUsers();
+  } catch (e) { toast(e.message); }
+};
+
+window.adminUnmute = async function(id) {
+  try {
+    await api(`/admin/users/${id}/unmute`, { method: 'POST' });
+    toast('已解除禁言');
+    loadAdminUsers();
+  } catch (e) { toast(e.message); }
+};
 
 // ===== Init =====
 window.loadBounties = loadBounties;

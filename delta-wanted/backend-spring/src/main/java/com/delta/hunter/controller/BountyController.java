@@ -68,6 +68,7 @@ public class BountyController {
     public ResponseEntity<?> create(@RequestBody Map<String, String> body,
                                     @AuthenticationPrincipal User user) {
         if (user == null) return ResponseEntity.status(401).body(Map.of("error", "请先登录"));
+        if (user.isMuted()) return ResponseEntity.status(403).body(Map.of("error", "您已被禁言，无法发布通缉令"));
         String gameId = body.get("game_id");
         String reason = body.get("reason");
         if (gameId == null || reason == null)
@@ -88,6 +89,7 @@ public class BountyController {
     @Transactional
     public ResponseEntity<?> hunt(@PathVariable String id, @AuthenticationPrincipal User user) {
         if (user == null) return ResponseEntity.status(401).body(Map.of("error", "请先登录"));
+        if (user.isMuted()) return ResponseEntity.status(403).body(Map.of("error", "您已被禁言，无法接取通缉令"));
         Bounty b = bountyRepo.findById(id).orElse(null);
         if (b == null) return ResponseEntity.status(404).body(Map.of("error", "通缉令不存在"));
         if (b.getStatus() != Bounty.Status.active)
@@ -135,6 +137,7 @@ public class BountyController {
     public ResponseEntity<?> addComment(@PathVariable String id, @RequestBody Map<String, String> body,
                                         @AuthenticationPrincipal User user) {
         if (user == null) return ResponseEntity.status(401).body(Map.of("error", "请先登录"));
+        if (user.isMuted()) return ResponseEntity.status(403).body(Map.of("error", "您已被禁言，无法发表评论"));
         String content = body.get("content");
         if (content == null || content.isBlank())
             return ResponseEntity.badRequest().body(Map.of("error", "评论不能为空"));

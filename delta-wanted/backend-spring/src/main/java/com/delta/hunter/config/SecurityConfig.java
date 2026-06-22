@@ -28,6 +28,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/bounties").permitAll()
                 .requestMatchers("/api/bounties/*").permitAll()
                 .requestMatchers("/api/users/{id:^(?!search).*}").permitAll()
+                .requestMatchers("/api/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);

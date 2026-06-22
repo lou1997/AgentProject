@@ -76,6 +76,7 @@ public class MessageController {
     public ResponseEntity<?> send(@RequestBody Map<String, String> body,
                                   @AuthenticationPrincipal User user) {
         if (user == null) return ResponseEntity.status(401).body(Map.of("error", "请先登录"));
+        if (user.isMuted()) return ResponseEntity.status(403).body(Map.of("error", "您已被禁言，无法发送私信"));
 
         String toId = body.get("to_id");
         String content = body.get("content");

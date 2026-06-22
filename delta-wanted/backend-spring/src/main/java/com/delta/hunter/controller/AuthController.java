@@ -38,7 +38,9 @@ public class AuthController {
                 passwordEncoder.encode(req.getPassword()));
         userRepo.save(user);
 
-        String token = jwtUtil.generateToken(user.getId(), user.getUsername());
+        String token = jwtUtil.generateToken(user.getId(), user.getUsername(), user.getRole());
+        userRepo.save(user);
+
         return ResponseEntity.ok(Map.of("token", token, "user", userMap(user)));
     }
 
@@ -49,7 +51,7 @@ public class AuthController {
         if (user == null || !passwordEncoder.matches(req.getPassword(), user.getPassword()))
             return ResponseEntity.badRequest().body(Map.of("error", "用户名或密码错误"));
 
-        String token = jwtUtil.generateToken(user.getId(), user.getUsername());
+        String token = jwtUtil.generateToken(user.getId(), user.getUsername(), user.getRole());
         return ResponseEntity.ok(Map.of("token", token, "user", userMap(user)));
     }
 
@@ -64,6 +66,8 @@ public class AuthController {
         m.put("id", u.getId());
         m.put("username", u.getUsername());
         m.put("avatar", u.getAvatar());
+        m.put("role", u.getRole());
+        m.put("muted", u.isMuted());
         return m;
     }
 }

@@ -12,8 +12,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 import java.io.IOException;
 import java.util.Collections;
+import java.util.List;
 
 @Component
 public class JwtFilter extends OncePerRequestFilter {
@@ -37,8 +40,12 @@ public class JwtFilter extends OncePerRequestFilter {
                 String userId = claims.getSubject();
                 User user = userRepo.findById(userId).orElse(null);
                 if (user != null) {
+                    String role = claims.get("role", String.class);
+                    List<SimpleGrantedAuthority> authorities = "admin".equalsIgnoreCase(role)
+                            ? List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"))
+                            : List.of(new SimpleGrantedAuthority("ROLE_USER"));
                     UsernamePasswordAuthenticationToken token =
-                            new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList());
+                            new UsernamePasswordAuthenticationToken(user, null, authorities);
                     SecurityContextHolder.getContext().setAuthentication(token);
                 }
             } catch (Exception ignored) {}
